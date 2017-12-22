@@ -30,9 +30,14 @@
     
     _personListViewModel = [[PersonListViewModel alloc] init];
         
-    [_personListViewModel loadPersonList];
+    [[_personListViewModel loadPersonList] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@",x);
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"%@",error);
+    } completed:^{
+        NSLog(@"OK");
+    }];
         
-   
 }
 
 - (void)didReceiveMemoryWarning {

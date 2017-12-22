@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Person.h"
+#import <ReactiveObjC.h>
 
 //数据模型
 @interface PersonListViewModel : NSObject
@@ -16,7 +17,7 @@
 @property (nonatomic) NSMutableArray <Person *> *personList;
 
 
-- (void)loadPersonList;
+- (RACSignal *)loadPersonList;
 
 @end
 
